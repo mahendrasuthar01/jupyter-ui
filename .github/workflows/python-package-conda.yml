@@ -20,9 +20,7 @@ jobs:
         echo $CONDA/bin >> $GITHUB_PATH
     - name: Install dependencies
       run: |
-        $CONDA/bin/conda deactivate
-        $CONDA/bin/conda remove -y --all
-        $CONDA/bin/conda env create --file environment.yml --name base
+        $CONDA/bin/conda env update --file environment.yml --name base
         #source activate
         export PATH="/opt/conda/bin:$PATH"
         #which conda
@@ -30,9 +28,10 @@ jobs:
         $CONDA/bin/conda activate base
     - name: install yarn
       run: |
-        conda install -c conda-forge yarn=3.5.0
-        which yarn
-        /usr/share/miniconda/bin/yarn upgrade-interactive
+        $CONDA/bin/conda activate base
+        #conda install -c conda-forge yarn=3.5.0
+        #which yarn
+        #/usr/share/miniconda/bin/yarn upgrade-interactive
         # stop the build if there are Python syntax errors or undefined names
         # flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide

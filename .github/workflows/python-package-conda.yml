@@ -22,7 +22,7 @@ jobs:
       run: |
         $CONDA/bin/conda env update --file environment.yml --name base
         which conda
-        $CONDA/bin/conda activate datalayer
+        $CONDA/bin/conda activate base
     - name: install yarn
       run: |
         conda install -c conda-forge yarn=3.5.0

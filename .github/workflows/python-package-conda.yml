@@ -22,6 +22,7 @@ jobs:
       run: |
         $CONDA/bin/conda env update --file environment.yml --name base
         which conda
+        eval "$(conda shell.bash hook)"
         $CONDA/bin/conda activate base
     - name: install yarn
       run: |

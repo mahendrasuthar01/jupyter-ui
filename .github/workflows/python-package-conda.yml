@@ -23,7 +23,7 @@ jobs:
         conda env update --file environment.yml --name base
     - name: install yarn
       run: |
-        conda install yarn
+        conda install -c conda-forge yarn=3.5.0
         which yarn
         /usr/share/miniconda/bin/yarn upgrade-interactive
         # stop the build if there are Python syntax errors or undefined names

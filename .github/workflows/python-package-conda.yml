@@ -21,8 +21,9 @@ jobs:
     - name: Install dependencies
       run: |
         $CONDA/bin/conda env update --file environment.yml --name base
-        #source activate
-        export PATH="/opt/conda/bin:$PATH"
+        #bash conda.sh
+        source activate base
+        #export PATH="/opt/conda/bin:$PATH"
         #which conda
         eval "$(conda shell.bash hook)"
         $CONDA/bin/conda activate base

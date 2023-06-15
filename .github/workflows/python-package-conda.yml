@@ -7,15 +7,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup Conda dependencies
-      uses: conda-incubator/setup-miniconda@v2
-      with:
-        activate-environment: datalayer
-        environment-file: environment.yml
-        python-version: 3.7
-        auto-activate-base: false
-    - name: Conda info
-      run: |
-        conda info
-        conda list
+      - uses: actions/checkout@v2
+      - name: Setup conda
+        uses: s-weigand/setup-conda@v1
+        with:
+          update-conda: true
+          python-version: ${{ matrix.python-version }}
+          conda-channels: anaconda, conda-forge
+      - run: conda --version
+      - run: which python

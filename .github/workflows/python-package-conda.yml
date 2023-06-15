@@ -32,7 +32,12 @@ jobs:
             #source /usr/share/miniconda/etc/profile.d/conda.sh
             conda activate base
             $CONDA/bin/conda info
-            
+      - name: Installation of yarn
+        run:  |
+            npm uninstall --global yarn
+            corepack enable
+            corepack prepare yarn@stable --activate
+    
       - name: Yarn install
         run:  |
             yarn --version
@@ -41,8 +46,8 @@ jobs:
             #yarn install
             #conda upgrade yarn
             #npm uninstall --global yarn; npm install --global yarn@3.5.0
-            yarn upgrade 3.5.0
-            npm upgrade
+            #yarn upgrade 3.5.0
+            #npm upgrade
             yarn --version
             
       

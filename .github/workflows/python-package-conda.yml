@@ -24,6 +24,6 @@ jobs:
     - name: Perform Conda tests
       run: |
         export PATH="./:$PATH"
-        conda activate base
+        conda env list
         echo "Conda prefix: $CONDA_PREFIX"
   

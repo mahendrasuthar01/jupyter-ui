@@ -28,4 +28,6 @@ jobs:
         export PATH="./:$PATH"
         conda env list
         echo "Conda prefix: $CONDA_PREFIX"
-  
+    - name: Install Yarn
+      run: | 
+        conda install -c conda-forge yarn=3.5.0

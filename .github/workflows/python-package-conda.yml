@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: |
             # $CONDA is an environment variable pointing to the root of the miniconda directory
-            $CONDA/bin/conda env update --file environment.yml --name base
+            $CONDA/bin/conda env update --file environment.yml --name datalayer
             $CONDA/bin/conda info
             $CONDA/bin/conda list
             
@@ -30,7 +30,7 @@ jobs:
             #conda init bash
             whereis conda
             #source /usr/share/miniconda/etc/profile.d/conda.sh
-            conda activate base
+            conda activate datalayer
             $CONDA/bin/conda info
       - name: Installation of yarn
         run:  |
@@ -51,7 +51,7 @@ jobs:
             yarn --version
       - name: Yarn Build Process
         run:  |
-            pip3 install jupyterlab
+            #pip3 install jupyterlab
             yarn install
             yarn build
       

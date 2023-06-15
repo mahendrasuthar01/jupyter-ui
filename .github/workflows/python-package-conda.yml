@@ -24,4 +24,5 @@ jobs:
       - name: Conda Active
         run:  |
             $CONDA/bin/conda init powershell
+            source /usr/share/miniconda/etc/profile.d/conda.sh
             $CONDA/bin/conda activate base

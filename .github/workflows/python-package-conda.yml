@@ -20,8 +20,8 @@ jobs:
         echo $CONDA/bin >> $GITHUB_PATH
     - name: Install dependencies
       run: |
-        $CONDA/bin/conda env update --file environment.yml --name base
-        $CONDA/bin/conda env list
+        conda env update --file environment.yml --name base
+        conda env list
         #conda init bash
         #source activate base
         export PATH="/opt/conda/bin:$PATH"

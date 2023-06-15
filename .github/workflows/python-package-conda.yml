@@ -9,6 +9,9 @@ jobs:
       matrix:
         os: ["ubuntu-latest"]
         python-version: ["3.8"]
+    defaults:
+      run:
+        shell: "bash -l {0}"    
         
     steps:
       - uses: actions/checkout@v2
@@ -24,7 +27,6 @@ jobs:
       - name: Conda Active
         run:  |
             ps -p $$
-            source ~/.bashrc
             conda init bash
             whereis conda
             #source /usr/share/miniconda/etc/profile.d/conda.sh

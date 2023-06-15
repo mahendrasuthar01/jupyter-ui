@@ -27,8 +27,14 @@ jobs:
       - name: Conda Active
         run:  |
             ps -p $$
-            conda init bash
+            #conda init bash
             whereis conda
             #source /usr/share/miniconda/etc/profile.d/conda.sh
             conda activate base
             $CONDA/bin/conda info
+            
+      - name: Yarn install
+        run:  |
+            yarn --version
+            
+      

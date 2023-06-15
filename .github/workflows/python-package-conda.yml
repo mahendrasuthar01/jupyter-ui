@@ -36,6 +36,7 @@ jobs:
         yarn install
     - name: Install Yarn
       run: | 
+        conda list
         which yarn
         yarn build
         

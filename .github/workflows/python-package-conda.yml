@@ -16,13 +16,13 @@ jobs:
       run: |
         source ~/.bashrc
         # $CONDA is an environment variable pointing to the root of the miniconda directory
-        $CONDA/bin/conda env update --file environment.yml --name base
+        $CONDA/bin/conda env create -f environment.yml
     - name: Set up Conda environment
       run: |
           export PATH="./:$PATH"
           conda init bash
           source /usr/share/miniconda/etc/profile.d/conda.sh
-          conda activate base
+          conda activate datalayer
     - name: Perform Conda tests
       run: |
         export PATH="./:$PATH"
@@ -30,9 +30,8 @@ jobs:
         echo "Conda prefix: $CONDA_PREFIX"
     - name: Install Yarn
       run: | 
+        yarn install
         conda install -c conda-forge yarn=3.5.0
-        yarn set version latest
-        yarn set version from sources
     - name: Install Yarn
       run: | 
         which yarn

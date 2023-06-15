@@ -7,37 +7,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.11
-      uses: actions/setup-node@v3
+    - uses: actions/checkout@v2
+    - name: Setup Conda dependencies
+      uses: goanpeca/setup-miniconda@v1
       with:
-        python-version: 3.11
-    - name: Install dependencies
+        activate-environment: datalayer
+        environment-file: environment.yml
+        python-version: 3.7
+        auto-activate-base: false
+    - name: Conda info
       run: |
-        source ~/.bashrc
-        # $CONDA is an environment variable pointing to the root of the miniconda directory
-        $CONDA/bin/conda env create -f environment.yml -n datalayer
-    - name: Set up Conda environment
-      run: |
-          export PATH="./:$PATH"
-          conda init bash
-          source /usr/share/miniconda/etc/profile.d/conda.sh
-          conda activate datalayer
-    - name: Perform Conda tests
-      run: |
-        export PATH="./:$PATH"
-        conda env list
-        echo "Conda prefix: $CONDA_PREFIX"
-    - name: Install Yarn
-      run: | 
-        #yarn set version latest -g
-        #yarn -v
-        conda install -c conda-forge yarn=3.5.0
-        conda list -n datalayer
+        conda info
         conda list
-        yarn install
-    - name: Install Yarn
-      run: |
-        which yarn
-        yarn build
-        

@@ -38,5 +38,8 @@ jobs:
             yarn --version
             node --version
             npm --version
+            yarn install
+            #npm uninstall --global yarn; npm install --global yarn@
+            #yarn --version
             
       

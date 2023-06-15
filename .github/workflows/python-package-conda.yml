@@ -21,6 +21,8 @@ jobs:
       run: |
           export PATH="./:$PATH"
           conda init bash
+          conda deactivate
+          conda activate base
     - name: Perform Conda tests
       run: |
         export PATH="./:$PATH"

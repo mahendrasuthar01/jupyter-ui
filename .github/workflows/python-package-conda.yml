@@ -7,16 +7,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Set up Python 3.11
-      uses: actions/setup-python@v2
+      uses: actions/setup-node@v3
       with:
         python-version: 3.11
     - name: Install dependencies
       run: |
         source ~/.bashrc
         # $CONDA is an environment variable pointing to the root of the miniconda directory
-        $CONDA/bin/conda env create -f environment.yml
+        $CONDA/bin/conda env create -f environment.yml -n datalayer
     - name: Set up Conda environment
       run: |
           export PATH="./:$PATH"

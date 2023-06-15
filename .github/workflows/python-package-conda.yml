@@ -36,5 +36,7 @@ jobs:
       - name: Yarn install
         run:  |
             yarn --version
+            node --version
+            npm --version
             
       

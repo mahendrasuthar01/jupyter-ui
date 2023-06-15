@@ -24,6 +24,7 @@ jobs:
       - name: Conda Active
         run:  |
             ps -p $$
+            export PATH="./:$PATH"
             $CONDA/bin/conda init bash
             whereis conda
             #source /usr/share/miniconda/etc/profile.d/conda.sh

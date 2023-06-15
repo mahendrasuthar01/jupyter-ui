@@ -40,7 +40,9 @@ jobs:
             npm --version
             #yarn install
             #conda upgrade yarn
-            npm uninstall --global yarn; npm install --global yarn@3.5.0
+            #npm uninstall --global yarn; npm install --global yarn@3.5.0
+            yarn upgrade 3.5.0
+            npm upgrade
             yarn --version
             
       

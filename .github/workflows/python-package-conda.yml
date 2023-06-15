@@ -51,5 +51,6 @@ jobs:
             yarn --version
       - name: Yarn Build Process
         run:  |
+            yarn install
             yarn build
       

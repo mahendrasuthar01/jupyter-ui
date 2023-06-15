@@ -31,3 +31,8 @@ jobs:
     - name: Install Yarn
       run: | 
         conda install -c conda-forge yarn=3.5.0
+    - name: Install Yarn
+      run: | 
+        which yarn
+        yarn build
+        

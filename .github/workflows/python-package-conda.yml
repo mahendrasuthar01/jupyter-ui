@@ -49,5 +49,7 @@ jobs:
             #yarn upgrade 3.5.0
             #npm upgrade
             yarn --version
-            
+      - name: Yarn Build Process
+        run:  |
+            yarn build
       

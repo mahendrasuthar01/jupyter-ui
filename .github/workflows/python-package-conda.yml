@@ -21,10 +21,11 @@ jobs:
     - name: Install dependencies
       run: |
         $CONDA/bin/conda env update --file environment.yml --name base
-        conda init bash
+        $CONDA/bin/conda info --envs
+        #conda init bash
         #source activate base
-        export PATH="/opt/conda/bin:$PATH"
-        which conda
+        #export PATH="/opt/conda/bin:$PATH"
+        #which conda
         #eval "$(conda shell.bash hook)"
         $CONDA/bin/conda activate base
     - name: install yarn

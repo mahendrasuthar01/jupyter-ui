@@ -30,7 +30,9 @@ jobs:
         echo "Conda prefix: $CONDA_PREFIX"
     - name: Install Yarn
       run: | 
-        conda install -c conda-forge yarn=3.5.0
+        yarn set version latest -g
+        yarn -v
+        #conda install -c conda-forge yarn=3.5.0
         yarn install
     - name: Install Yarn
       run: | 

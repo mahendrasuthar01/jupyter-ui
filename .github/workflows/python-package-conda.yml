@@ -33,7 +33,6 @@ jobs:
             #conda init bash
             whereis conda
             #source /usr/share/miniconda/etc/profile.d/conda.sh
-            #$CONDA/bin/conda init bash
             $CONDA/bin/conda activate datalayer
             $CONDA/bin/conda info
       - name: Installation of yarn

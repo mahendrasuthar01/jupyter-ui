@@ -30,8 +30,8 @@ jobs:
       - name: Conda Active
         run:  |
             ps -p $$
-            #conda init bash
             whereis conda
+            /usr/share/miniconda/condabin/conda init --all
             #conda init
             #source /usr/share/miniconda/etc/profile.d/conda.sh
             $CONDA/bin/conda activate datalayer

@@ -51,6 +51,7 @@ jobs:
             yarn --version
       - name: Yarn Build Process
         run:  |
+            conda install -c conda-forge jupyterlab
             #pip3 install jupyterlab
             yarn install
             yarn build

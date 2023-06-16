@@ -56,7 +56,7 @@ jobs:
         run:  |
             #conda install -c conda-forge jupyterlab
             #pip3 install jupyterlab
-            jupyter lab --version
+            jupyterlab --version
             yarn install
             yarn build
       

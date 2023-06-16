@@ -32,7 +32,7 @@ jobs:
             #conda init bash
             whereis conda
             #source /usr/share/miniconda/etc/profile.d/conda.sh
-            conda activate datalayer
+            $CONDA/bin/conda activate datalayer
             $CONDA/bin/conda info
       - name: Installation of yarn
         run:  |
@@ -55,6 +55,7 @@ jobs:
         run:  |
             #conda install -c conda-forge jupyterlab
             #pip3 install jupyterlab
+            jupyter lab --version
             yarn install
             yarn build
       

@@ -30,7 +30,8 @@ jobs:
             #conda init bash
             whereis conda
             #source /usr/share/miniconda/etc/profile.d/conda.sh
-            conda deactive test
+            conda deactivate
+            conda remove -y --all -n datalayer
             conda activate datalayer
             $CONDA/bin/conda info
       - name: Installation of yarn

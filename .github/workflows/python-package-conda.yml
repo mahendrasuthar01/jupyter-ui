@@ -31,10 +31,9 @@ jobs:
         run:  |
             ps -p $$
             whereis conda
-            /usr/share/miniconda/condabin/conda init --all
-            #conda init
+            #whereis conda
             #source /usr/share/miniconda/etc/profile.d/conda.sh
-            $CONDA/bin/conda activate datalayer
+            conda activate datalayer
             $CONDA/bin/conda info
       - name: Installation of yarn
         run:  |

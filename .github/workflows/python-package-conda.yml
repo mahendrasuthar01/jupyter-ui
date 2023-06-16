@@ -30,13 +30,14 @@ jobs:
             #conda init bash
             whereis conda
             #source /usr/share/miniconda/etc/profile.d/conda.sh
+            conda deactive test
             conda activate datalayer
             $CONDA/bin/conda info
       - name: Installation of yarn
         run:  |
             npm uninstall --global yarn
             corepack enable
-            corepack prepare yarn@stable --activate
+            corepack prepare yarn@3.5.0 --activate
     
       - name: Yarn install
         run:  |
